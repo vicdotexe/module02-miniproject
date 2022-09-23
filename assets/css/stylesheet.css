@@ -1,0 +1,6 @@
+:root{
+    --primary: blue;
+    --secondary: darkblue;
+    --gradient: linear-gradient(var(--primary) var(--secondary));
+    --gradient-reverse: linear-gradient(var(--secondary) var(--primary));
+}
