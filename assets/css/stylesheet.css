@@ -1,14 +1,18 @@
 :root{
-    --primary: blue;
-    --secondary: darkblue;
-    --background-color: rgb(44, 44, 44);
+    --primary: rgb(17, 17, 229);
+    --accent: rgb(29, 89, 243);
+    --secondary: rgb(23, 23, 75);
+    --background-color: rgb(33, 33, 33);
     --gradient: linear-gradient(var(--primary), var(--secondary));
     --gradient-reverse: linear-gradient(var(--secondary), var(--primary));
     --card-label-background: var(--gradient);
+
 }
 
 body {
     background-color:var(--background-color);
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 p {
@@ -16,8 +20,19 @@ p {
 }
 
 header {
-    color: var(--primary);
+    padding: 5px;
+    color: var(--accent);
     text-align: center;
+    background: linear-gradient(black, var(--background-color));
+}
+
+h1 {
+    font-size: 36px;
+    margin: 10px;
+}
+
+h2 {
+    font-size: 24px;
 }
 
 main {
@@ -37,10 +52,27 @@ main {
     border: 1px dashed white;
     width: 30%;
     margin: 15px 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.card:hover{
+    box-shadow:  0px 0px 15px var(--primary), inset 0px 0px 15px var(--primary) ;
+
+    animation: shake 0.2s;
+    animation-iteration-count: 1;
+}
+
+.card:hover h2{
+    box-shadow:  0px 0px 15px var(--primary), inset 0px 0px 15px var(--primary) ;
+
 }
 
 .card p{
-    color: var(--primary);
+    margin: 10px;
+    font-size: 12px;
+    color: white;
 }
 
 .card h2{
@@ -48,7 +80,7 @@ main {
     border: 1px solid white;
     border-radius: 5px;
     text-align: center;
-    color: var(--primary);
+    color: var(--accent);
     position: relative;
     top: -25px;
     background-color: black;
@@ -57,14 +89,27 @@ main {
 .code-snippet {
     color: white;
     border: 1px solid white;
+    padding: 5px;
     margin: 10px;
     background: var(--gradient-reverse);
+    font-family: 'Courier New', Courier, monospace;
+    flex-grow: 1;
 }
 
+pre {
+    white-space: pre-wrap;       /* css-3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+   }
+
 footer h3{
-    color: var(--primary);
+    color: var(--accent);
     text-align: center;
 }
+
+
 
 @media screen and (max-width: 992px){
     .card {
@@ -77,3 +122,17 @@ footer h3{
         width: 98%;
     }
 }
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
