@@ -1,6 +1,79 @@
 :root{
     --primary: blue;
     --secondary: darkblue;
-    --gradient: linear-gradient(var(--primary) var(--secondary));
-    --gradient-reverse: linear-gradient(var(--secondary) var(--primary));
+    --background-color: rgb(44, 44, 44);
+    --gradient: linear-gradient(var(--primary), var(--secondary));
+    --gradient-reverse: linear-gradient(var(--secondary), var(--primary));
+    --card-label-background: var(--gradient);
+}
+
+body {
+    background-color:var(--background-color);
+}
+
+p {
+    color: white;
+}
+
+header {
+    color: var(--primary);
+    text-align: center;
+}
+
+main {
+
+
+}
+
+.cards-viewer {
+    margin: 50px;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    border: 1px dashed white;
+    width: 30%;
+    margin: 15px 10px;
+}
+
+.card p{
+    color: var(--primary);
+}
+
+.card h2{
+    margin: 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+    text-align: center;
+    color: var(--primary);
+    position: relative;
+    top: -25px;
+    background-color: black;
+}
+
+.code-snippet {
+    color: white;
+    border: 1px solid white;
+    margin: 10px;
+    background: var(--gradient-reverse);
+}
+
+footer h3{
+    color: var(--primary);
+    text-align: center;
+}
+
+@media screen and (max-width: 992px){
+    .card {
+        width: 45%;
+    }
+}
+@media screen and (max-width: 768px){
+    
+    .card {
+        width: 98%;
+    }
 }
