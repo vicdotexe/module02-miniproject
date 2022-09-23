@@ -69,12 +69,6 @@ main {
 
 }
 
-.card p{
-    margin: 10px;
-    font-size: 12px;
-    color: white;
-}
-
 .card h2{
     margin: 10px;
     border: 1px solid white;
@@ -84,7 +78,16 @@ main {
     position: relative;
     top: -25px;
     background-color: black;
+    flex-basis: 0%;
 }
+
+.card p{
+    margin: 10px;
+    font-size: 12px;
+    color: white;
+}
+
+
 
 .code-snippet {
     color: white;
@@ -94,6 +97,10 @@ main {
     background: var(--gradient-reverse);
     font-family: 'Courier New', Courier, monospace;
     flex-grow: 1;
+}
+
+.code-snippet pre {
+    user-select: all;
 }
 
 pre {
